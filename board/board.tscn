@@ -1,14 +1,141 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqwncc3xjg6gw"]
+[gd_scene load_steps=9 format=3 uid="uid://cqwncc3xjg6gw"]
 
 [ext_resource type="Texture2D" uid="uid://cv7u43origqcs" path="res://assets/PREMIUM - ChessSet/Wooden 3/Boards/Boards - wooden 3 .png" id="1_5c38k"]
 [ext_resource type="Script" uid="uid://c8clse3mmw4nf" path="res://board/board.gd" id="1_k4dee"]
+[ext_resource type="PackedScene" uid="uid://cv0hi1xshnklu" path="res://units/pawn.tscn" id="3_vj8kq"]
+[ext_resource type="PackedScene" uid="uid://dxrfo75vhl6q7" path="res://units/rook.tscn" id="4_eiwly"]
+[ext_resource type="PackedScene" uid="uid://bbp3y6eseav5" path="res://units/knight.tscn" id="4_hecc7"]
+[ext_resource type="PackedScene" uid="uid://cpx4dfisro4b0" path="res://units/bishop.tscn" id="5_4go2t"]
+[ext_resource type="PackedScene" uid="uid://c86wpd85bytvj" path="res://units/queen.tscn" id="6_qhr1h"]
+[ext_resource type="PackedScene" uid="uid://crp2uha41trn5" path="res://units/king.tscn" id="7_jnjuh"]
 
 [node name="Board" type="Node2D"]
 script = ExtResource("1_k4dee")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
 [node name="ChessboardSprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_5c38k")
+
+[node name="Pieces" type="Node2D" parent="."]
+
+[node name="White" type="Node2D" parent="Pieces"]
+
+[node name="Rook_A1" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("4_eiwly")]
+current_square = NodePath("../../../Squares/A1")
+
+[node name="Knight_A2" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("4_hecc7")]
+current_square = NodePath("../../../Squares/A2")
+
+[node name="Bishop_A3" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("5_4go2t")]
+current_square = NodePath("../../../Squares/A3")
+
+[node name="Queen_A4" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("6_qhr1h")]
+current_square = NodePath("../../../Squares/A4")
+
+[node name="King_A5" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("7_jnjuh")]
+current_square = NodePath("../../../Squares/A5")
+
+[node name="Bishop_A6" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("5_4go2t")]
+current_square = NodePath("../../../Squares/A6")
+
+[node name="Knight_A7" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("4_hecc7")]
+current_square = NodePath("../../../Squares/A7")
+
+[node name="Rook_A8" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("4_eiwly")]
+current_square = NodePath("../../../Squares/A8")
+
+[node name="Pawn_B1" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+is_white = true
+current_square = NodePath("../../../Squares/B1")
+
+[node name="Pawn_B2" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+is_white = true
+current_square = NodePath("../../../Squares/B2")
+
+[node name="Pawn_B3" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+is_white = true
+current_square = NodePath("../../../Squares/B3")
+
+[node name="Pawn_B4" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+is_white = true
+current_square = NodePath("../../../Squares/B4")
+
+[node name="Pawn_B5" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+is_white = true
+current_square = NodePath("../../../Squares/B5")
+
+[node name="Pawn_B6" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+is_white = true
+current_square = NodePath("../../../Squares/B6")
+
+[node name="Pawn_B7" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+is_white = true
+current_square = NodePath("../../../Squares/B7")
+
+[node name="Pawn_B8" parent="Pieces/White" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+is_white = true
+current_square = NodePath("../../../Squares/B8")
+
+[node name="Black" type="Node2D" parent="Pieces"]
+
+[node name="Rook_H1" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("4_eiwly")]
+is_white = false
+current_square = NodePath("../../../Squares/H1")
+
+[node name="Knight_H2" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("4_hecc7")]
+is_white = false
+current_square = NodePath("../../../Squares/H2")
+
+[node name="Bishop_H3" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("5_4go2t")]
+is_white = false
+current_square = NodePath("../../../Squares/H3")
+
+[node name="Queen_H4" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("6_qhr1h")]
+is_white = false
+current_square = NodePath("../../../Squares/H4")
+
+[node name="King_H5" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("7_jnjuh")]
+is_white = false
+current_square = NodePath("../../../Squares/H5")
+
+[node name="Bishop_H6" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("5_4go2t")]
+is_white = false
+current_square = NodePath("../../../Squares/H6")
+
+[node name="Knight_H7" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("4_hecc7")]
+is_white = false
+current_square = NodePath("../../../Squares/H7")
+
+[node name="Rook_H8" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("4_eiwly")]
+is_white = false
+current_square = NodePath("../../../Squares/H8")
+
+[node name="Pawn_G1" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+current_square = NodePath("../../../Squares/G1")
+
+[node name="Pawn_G2" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+current_square = NodePath("../../../Squares/G2")
+
+[node name="Pawn_G3" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+current_square = NodePath("../../../Squares/G3")
+
+[node name="Pawn_G4" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+current_square = NodePath("../../../Squares/G4")
+
+[node name="Pawn_G5" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+current_square = NodePath("../../../Squares/G5")
+
+[node name="Pawn_G6" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+current_square = NodePath("../../../Squares/G6")
+
+[node name="Pawn_G7" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+current_square = NodePath("../../../Squares/G7")
+
+[node name="Pawn_G8" parent="Pieces/Black" node_paths=PackedStringArray("current_square") instance=ExtResource("3_vj8kq")]
+current_square = NodePath("../../../Squares/G8")
 
 [node name="Squares" type="Node2D" parent="."]
 

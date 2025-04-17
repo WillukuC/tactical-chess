@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://dxrfo75vhl6q7"]
+[gd_scene load_steps=4 format=3 uid="uid://dxrfo75vhl6q7"]
+
+[ext_resource type="Texture2D" uid="uid://byr4ugc7cbokd" path="res://assets/PREMIUM - ChessSet/Wooden 3/Pieces/Chess - white wooden 3/Rook.png" id="1_j87xd"]
+[ext_resource type="Script" uid="uid://blssn07rss34x" path="res://units/rook.gd" id="1_rp6og"]
+[ext_resource type="Texture2D" uid="uid://ds2gj505g131a" path="res://assets/PREMIUM - ChessSet/Wooden 3/Pieces/Chess - black wooden 3/Rook.png" id="2_rp6og"]
 
 [node name="Rook" type="Node2D"]
+script = ExtResource("1_rp6og")
+
+[node name="WhiteSprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_j87xd")
+
+[node name="BlackSprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_rp6og")

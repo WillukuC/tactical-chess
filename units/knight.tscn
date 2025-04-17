@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://bbp3y6eseav5"]
+[gd_scene load_steps=4 format=3 uid="uid://bbp3y6eseav5"]
+
+[ext_resource type="Texture2D" uid="uid://lj4es4o7ck8o" path="res://assets/PREMIUM - ChessSet/Wooden 3/Pieces/Chess - white wooden 3/Knight.png" id="1_i414g"]
+[ext_resource type="Script" uid="uid://dpdju604ltd6s" path="res://units/knight.gd" id="1_p68cf"]
+[ext_resource type="Texture2D" uid="uid://c2cltcsg5hob8" path="res://assets/PREMIUM - ChessSet/Wooden 3/Pieces/Chess - black wooden 3/Knight.png" id="2_niggt"]
 
 [node name="Knight" type="Node2D"]
+script = ExtResource("1_p68cf")
+
+[node name="WhiteSprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_i414g")
+
+[node name="BlackSprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_niggt")

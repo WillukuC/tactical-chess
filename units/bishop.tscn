@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://cpx4dfisro4b0"]
+[gd_scene load_steps=4 format=3 uid="uid://cpx4dfisro4b0"]
+
+[ext_resource type="Texture2D" uid="uid://bpqju72fxr8ds" path="res://assets/PREMIUM - ChessSet/Wooden 3/Pieces/Chess - white wooden 3/Bishop.png" id="1_2rxey"]
+[ext_resource type="Script" uid="uid://do5pn3tk441wl" path="res://units/bishop.gd" id="1_8ykws"]
+[ext_resource type="Texture2D" uid="uid://cch6sntiwnrqb" path="res://assets/PREMIUM - ChessSet/Wooden 3/Pieces/Chess - black wooden 3/Bishop.png" id="2_8ykws"]
 
 [node name="Bishop" type="Node2D"]
+script = ExtResource("1_8ykws")
+
+[node name="WhiteSprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_2rxey")
+
+[node name="BlackSprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_8ykws")

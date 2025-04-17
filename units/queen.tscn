@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://c86wpd85bytvj"]
+[gd_scene load_steps=4 format=3 uid="uid://c86wpd85bytvj"]
+
+[ext_resource type="Texture2D" uid="uid://dxa0gmwpo5vm4" path="res://assets/PREMIUM - ChessSet/Wooden 3/Pieces/Chess - white wooden 3/Queen.png" id="1_cembx"]
+[ext_resource type="Script" uid="uid://crcehwuapjg36" path="res://units/queen.gd" id="1_wpj1i"]
+[ext_resource type="Texture2D" uid="uid://c674f3648v58a" path="res://assets/PREMIUM - ChessSet/Wooden 3/Pieces/Chess - black wooden 3/Queen.png" id="2_wpj1i"]
 
 [node name="Queen" type="Node2D"]
+script = ExtResource("1_wpj1i")
+
+[node name="WhiteSprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_cembx")
+
+[node name="BlackSprite" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_wpj1i")
